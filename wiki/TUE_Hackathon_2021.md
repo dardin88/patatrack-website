@@ -1,21 +1,19 @@
 # 9th Patatrack Hackathon
 
 ## Required Packages
-The notebook requires sevaral python packages:
-* uproot
-* numpy
-* notebook
+The notebook requires two python packages: `uproot` and `numpy`.
 
 You can install them in different ways based on your environment.
 
-## Installation
-All packages can be installed from PyPI using pip:
+## Getting Started on your Machine
+
+### PIP
 
 ```
 pip install numpy notebook uproot
 ```
 
-An alternative is using Anaconda:
+### Anaconda
 
 ```
 conda config --add channels conda-forge
@@ -26,16 +24,50 @@ conda install notebook
 conda install uproot
 ```
 
-Another option is to use the [`environment.yml` file](environment.yml) provided by us to recreate the environment.
+### Anaconda using the provided environment files
+Another option is to use the [`environment.yml` file](environment.yml) provided by us.
 
-Save the file in a location convenient for you and create the environment using
+Download the file describing the environment (you can dowload the file manually as well):
+```
+wget https://patatrack.web.cern.ch/patatrack/wiki/environment.yml
+```
+
+Create the environment:
 
 ```
 conda env create -f environment.yml
 ```
 
-You can activate the environment by typing
+Activate the environment:
 
 ```
 conda activate cern-hackaton
+```
+
+You can execute jupyter using `jupyter notebook`
+
+## Create a Python Virtual Environment on LXPlus
+
+Login to the machine:
+```
+ssh [your_cern_username]@lxplus.cern.ch
+```
+
+Create the environment and install the needed packages:
+```
+python3 -m venv ./venv
+source venv/bin/activate
+pip install numpy notebook uproot
+```
+
+## Clone the base repository
+
+```
+git clone https://github.com/cms-patatrack/tue-hackathon-2021.git
+```
+
+## Run the `hackaton_demo` notebook
+You can open the `hackaton_demo` notebook using jupyter
+```
+jupyter notebook [location]/hackathon_demo.ipynb
 ```
